@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Velwa</string>
+    <string name="scan_devices">Scan Karo</string>
+    <string name="no_devices">Koi device nahi mila</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="volume">Awaaz</string>
+    <string name="battery">Battery</string>
+    <string name="favorite">Favorite</string>
+    <string name="auto_connect">Auto Connect</string>
+    <string name="rename">Naam Badlo</string>
+    <string name="remove_device">Device Hatao</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="bluetooth_off">Bluetooth band hai</string>
+    <string name="enable_bluetooth">Bluetooth Chalu Karo</string>
+    <string name="scanning">Scan ho raha hai…</string>
+    <string name="tagline">Bluetooth — Next Generation</string>
+</resources>

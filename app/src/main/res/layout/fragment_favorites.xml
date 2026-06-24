@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_primary">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⭐ Favorites"
+        android:textSize="20sp"
+        android:textColor="@color/text_primary"
+        android:fontFamily="sans-serif-medium"
+        android:padding="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp" />
+
+    <LinearLayout
+        android:id="@+id/favEmptyView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="40dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⭐"
+            android:textSize="48sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Koi favorite nahi hai"
+            android:textSize="15sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device card pe ❤️ tap karke favorite banao"
+            android:textSize="12sp"
+            android:textColor="@color/text_tertiary"
+            android:layout_marginTop="6dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>

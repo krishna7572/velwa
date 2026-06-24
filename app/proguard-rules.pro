@@ -1,0 +1,3 @@
+-keep class com.velwa.app.data.models.** { *; }
+-keep class com.velwa.app.data.bluetooth.** { *; }
+-dontwarn kotlin.**

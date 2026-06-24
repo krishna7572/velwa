@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/bg_secondary"
+            app:titleTextColor="@color/text_primary"
+            app:navigationIconTint="@color/text_primary" />
+
+        <!-- Hero Device Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="16dp"
+            style="@style/VelwaCard"
+            app:cardCornerRadius="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="24dp">
+
+                <ImageView
+                    android:id="@+id/deviceIcon"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:tint="@color/neon_blue"
+                    android:src="@drawable/ic_device_earbuds"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/deviceName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Galaxy Buds Pro"
+                    android:textSize="22sp"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintTop_toTopOf="@id/deviceIcon"
+                    app:layout_constraintStart_toEndOf="@id/deviceIcon"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/connectionStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="● Connected"
+                    android:textSize="13sp"
+                    android:textColor="@color/neon_green"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintTop_toBottomOf="@id/deviceName"
+                    app:layout_constraintStart_toStartOf="@id/deviceName" />
+
+                <TextView
+                    android:id="@+id/deviceAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:11:22:33:44:55"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_tertiary"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintTop_toBottomOf="@id/connectionStatus"
+                    app:layout_constraintStart_toStartOf="@id/deviceName" />
+
+                <TextView
+                    android:id="@+id/deviceType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Earbuds"
+                    android:textSize="11sp"
+                    android:textColor="@color/neon_purple"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintTop_toBottomOf="@id/deviceAddress"
+                    app:layout_constraintStart_toStartOf="@id/deviceName" />
+
+                <!-- Battery -->
+                <LinearLayout
+                    android:id="@+id/batteryGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <ImageView
+                        android:id="@+id/batteryIcon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_battery_full"
+                        android:tint="@color/neon_green" />
+
+                    <TextView
+                        android:id="@+id/batteryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="85%"
+                        android:textSize="16sp"
+                        android:textColor="@color/neon_green"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Action Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:weightSum="3">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/connectBtn"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="2"
+                android:text="Connect Karo"
+                android:textColor="@color/text_primary"
+                app:backgroundTint="@color/neon_blue"
+                app:cornerRadius="12dp"
+                android:layout_marginEnd="8dp" />
+
+            <ImageButton
+                android:id="@+id/favoriteBtn"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_favorite"
+                android:tint="@color/neon_pink"
+                android:background="@drawable/bg_card_rounded"
+                android:padding="12dp" />
+        </LinearLayout>
+
+        <!-- Volume Control Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            style="@style/VelwaCard">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔊 Awaaz (Volume)"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="sans-serif-medium" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="16dp">
+
+                    <!-- Vol Down -->
+                    <ImageButton
+                        android:id="@+id/volDownBtn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_volume_down"
+                        android:tint="@color/text_secondary"
+                        android:background="@drawable/bg_icon_circle_small"
+                        android:padding="8dp" />
+
+                    <!-- Seekbar -->
+                    <SeekBar
+                        android:id="@+id/volumeSeekbar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="12dp"
+                        android:max="100"
+                        android:progress="60"
+                        android:progressTint="@color/neon_blue"
+                        android:thumbTint="@color/neon_blue" />
+
+                    <!-- Vol Up -->
+                    <ImageButton
+                        android:id="@+id/volUpBtn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_volume_up"
+                        android:tint="@color/neon_blue"
+                        android:background="@drawable/bg_icon_circle_small"
+                        android:padding="8dp" />
+                </LinearLayout>
+
+                <!-- Volume value + mute -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/volumeValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="60%"
+                        android:textSize="26sp"
+                        android:textColor="@color/neon_blue"
+                        android:fontFamily="sans-serif-black" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/muteBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="🔇 Mute"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_primary"
+                        app:backgroundTint="@color/bg_card_elevated"
+                        app:cornerRadius="10dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Device Settings Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            style="@style/VelwaCard">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚙️ Device Settings"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Rename -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/renameBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="✏️ Naam Badlo (Rename)"
+                    android:textColor="@color/text_primary"
+                    app:backgroundTint="@color/bg_card_elevated"
+                    app:cornerRadius="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Auto Connect -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_card_rounded"
+                    android:paddingHorizontal="14dp"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="⚡ Auto Connect"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/autoConnectSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/neon_blue"
+                        app:trackTint="@color/neon_blue_dim" />
+                </LinearLayout>
+
+                <!-- Remove -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/removeBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="🗑️ Device Hatao"
+                    android:textColor="@color/error_red"
+                    app:backgroundTint="@color/bg_card_elevated"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="@color/error_red"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <View android:layout_width="match_parent" android:layout_height="40dp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

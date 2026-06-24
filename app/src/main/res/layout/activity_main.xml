@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- Top Header Card -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_secondary"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/velwaTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VELWA"
+            android:textSize="26sp"
+            android:textColor="@color/text_primary"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.12"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- BT Toggle -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/btToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            app:thumbTint="@color/neon_blue"
+            app:trackTint="@color/neon_blue_dim"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/velwaTitle" />
+
+        <TextView
+            android:id="@+id/btStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth ON"
+            android:textSize="12sp"
+            android:textColor="@color/neon_green"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/velwaTitle"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Tab Layout -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:tabTextColor="@color/text_secondary"
+            app:tabSelectedTextColor="@color/neon_blue"
+            app:tabIndicatorColor="@color/neon_blue"
+            app:tabIndicatorHeight="2dp"
+            app:tabBackground="@color/bg_secondary"
+            app:tabIconTint="@color/nav_tint_selector"
+            app:tabInlineLabel="true"
+            app:layout_constraintTop_toBottomOf="@id/btStatusText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ViewPager -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!-- FAB Scan -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="80dp"
+        android:layout_marginBottom="80dp"
+        android:src="@drawable/ic_scan"
+        app:tint="@color/text_primary"
+        app:backgroundTint="@color/neon_blue"
+        app:fabSize="normal"
+        app:elevation="8dp" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/bg_secondary"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/nav_tint_selector"
+        app:itemTextColor="@color/nav_tint_selector"
+        app:itemActiveIndicatorColor="@color/neon_blue_dim"
+        app:labelVisibilityMode="labeled" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

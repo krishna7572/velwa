@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- fragment_devices.xml -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Paired Devices Header Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/pairedHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="📱 Paired Devices Import Karo"
+            android:textSize="13sp"
+            app:backgroundTint="@color/bg_card"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/neon_blue"
+            app:strokeWidth="1dp"
+            android:textColor="@color/neon_blue" />
+
+        <!-- Devices List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/devicesRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp" />
+
+        <!-- Empty State -->
+        <LinearLayout
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="40dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_bluetooth"
+                android:tint="@color/text_tertiary"
+                android:alpha="0.4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Koi device nahi mila"
+                android:textSize="16sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scan karke device add karo"
+                android:textSize="13sp"
+                android:textColor="@color/text_tertiary"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

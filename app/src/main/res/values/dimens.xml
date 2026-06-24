@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="card_radius">16dp</dimen>
+    <dimen name="card_radius_small">10dp</dimen>
+    <dimen name="icon_size_small">20dp</dimen>
+    <dimen name="icon_size_medium">32dp</dimen>
+    <dimen name="icon_size_large">56dp</dimen>
+    <dimen name="device_card_height">120dp</dimen>
+    <dimen name="bottom_nav_height">64dp</dimen>
+</resources>
